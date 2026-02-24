@@ -1,4 +1,6 @@
 *.exe
 *.pkg
+*.log
+.gitattributes
 /dist/
 /build/

@@ -1,6 +1,7 @@
 🚀 Novo projeto publicado no GitHub!
 
-Recentemente subi para o repositório um projeto de automação de dashboards, desenvolvido em Python.  
+Recentemente subi para o repositório um projeto de automação de dashboards, desenvolvido em Python.
+
 A aplicação abre o Zendesk em abas do Google Chrome / Mozilla Firefox e alterna entre elas em intervalos definidos, garantindo monitoramento contínuo e automatizado.
 
 🐍 Linguagem  

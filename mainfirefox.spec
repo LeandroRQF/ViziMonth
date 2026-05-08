@@ -1,20 +1,16 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_submodules
-
-hiddenimports = []
-hiddenimports += collect_submodules('holidays')
 
 
 a = Analysis(
-    ['mainfirefox.py'],
+    ['mainFirefox.py'],
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=hiddenimports,
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=[],
+    excludes=['PySide6', 'PyQt5', 'PyQt5.QtCore', 'PyQt5.QtGui', 'PyQt5.QtWidgets', 'matplotlib', 'numpy', 'PIL', 'tkinter'],    
     noarchive=False,
     optimize=0,
 )
@@ -26,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='mainfirefox',
+    name='mainFirefox',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

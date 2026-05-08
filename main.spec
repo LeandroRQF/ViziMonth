@@ -1,16 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
-from PyInstaller.utils.hooks import collect_submodules
-
-hiddenimports = []
-hiddenimports += collect_submodules('holidays')
 
 
 a = Analysis(
-    ['mainchrome.py'],
+    ['main.py'],
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=hiddenimports,
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -26,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='mainchrome',
+    name='main',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

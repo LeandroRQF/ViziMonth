@@ -24,9 +24,10 @@ logging.basicConfig(
 # 2. CONFIGURAÇÕES GERAIS
 SLA = "https://sisloc.zendesk.com/explore/studio#/dashboards/CEEA2DCEA89639D726481DAC698F73220CF13D1C75DD196EA5B9EFED3BBA8892"
 SOLICITACOES = "https://sisloc.zendesk.com/explore/studio#/dashboards/0750661411479DDCD82D3BDFC39D091ED2940BEC794DE502DE6F25787DB050AB"
+GERAL = "http://sisloctestefab:8080/"
 HORA_INICIO = "07:45" 
 HORA_PARADA = "18:15" 
-TEMPO_ALTERNANCIA = 45
+TEMPO_ALTERNANCIA = 60
 
 # 3. LOOP DE ESPERA (HORÁRIO DE INÍCIO)
 print(f"Aguardando o horário de início ({HORA_INICIO})...")
@@ -64,6 +65,11 @@ try:
     print("Carregando Dashboard de Solicitações...")
     driver.execute_script(f"window.open('{SOLICITACOES}', '_blank');")
     time.sleep(5)
+
+    # 8.1 ABRE A TERCEIRA ABA COM O DASHBOARD GERAL
+    print("Carregando Dashboard Geral...")
+    driver.execute_script(f"window.open('{GERAL}', '_blank');")
+    time.sleep(5)    
 
     # 9. COLOCA EM TELA CHEIA (Equivalente ao F11)
     driver.fullscreen_window()

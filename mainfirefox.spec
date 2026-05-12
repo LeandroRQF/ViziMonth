@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['mainFirefox.py'],
+    ['mainfirefox.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -10,7 +10,7 @@ a = Analysis(
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=['PySide6', 'PyQt5', 'PyQt5.QtCore', 'PyQt5.QtGui', 'PyQt5.QtWidgets', 'matplotlib', 'numpy', 'PIL', 'tkinter'],    
+    excludes=['PyQt5'],
     noarchive=False,
     optimize=0,
 )
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='mainFirefox',
+    name='mainfirefox',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

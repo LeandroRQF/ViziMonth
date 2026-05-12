@@ -25,6 +25,7 @@ logging.basicConfig(
 SLA = "https://sisloc.zendesk.com/explore/studio#/dashboards/CEEA2DCEA89639D726481DAC698F73220CF13D1C75DD196EA5B9EFED3BBA8892"
 SOLICITACOES = "https://sisloc.zendesk.com/explore/studio#/dashboards/0750661411479DDCD82D3BDFC39D091ED2940BEC794DE502DE6F25787DB050AB"
 GERAL = "http://sisloctestefab:8080/"
+MONITOR_ACESSO = "http://aqs:8090/"
 HORA_INICIO = "07:45" 
 HORA_PARADA = "18:15" 
 TEMPO_ALTERNANCIA = 60
@@ -56,20 +57,26 @@ driver = webdriver.Firefox(service=service, options=firefox_options)
 
 try:
     # 7. ABRE A PRIMEIRA ABA COM O DASHBOARD DE SLA
-    logging.info("Carregando Dashboard de SLA...") 
-    print("Carregando Dashboard de SLA...")
-    driver.get(SLA)
-    time.sleep(5) # Tempo para o primeiro carregamento
+    # logging.info("Carregando Dashboard de SLA...") 
+    # print("Carregando Dashboard de SLA...")
+    # driver.get(SLA)
+    # time.sleep(5) # Tempo para o primeiro carregamento
 
     # 8. ABRE A SEGUNDA ABA COM O DASHBOARD DE SOLICITAÇÕES
-    print("Carregando Dashboard de Solicitações...")
-    driver.execute_script(f"window.open('{SOLICITACOES}', '_blank');")
-    time.sleep(5)
+    # print("Carregando Dashboard de Solicitações...")
+    # driver.execute_script(f"window.open('{SOLICITACOES}', '_blank');")
+    # time.sleep(5)
 
     # 8.1 ABRE A TERCEIRA ABA COM O DASHBOARD GERAL
+    logging.info("Carregando Dashboard Geral...") 
     print("Carregando Dashboard Geral...")
-    driver.execute_script(f"window.open('{GERAL}', '_blank');")
-    time.sleep(5)    
+    driver.get(GERAL)
+    time.sleep(5) # Tempo para o primeiro carregamento
+
+    # 8.2 ABRE A QUARTA ABA COM O DASHBOARD MONITOR DE ACESSO
+    print("Carregando Dashboard de Monitor de Acesso...")
+    driver.execute_script(f"window.open('{MONITOR_ACESSO}', '_blank');")
+    time.sleep(5)        
 
     # 9. COLOCA EM TELA CHEIA (Equivalente ao F11)
     driver.fullscreen_window()

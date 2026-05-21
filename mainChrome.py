@@ -26,6 +26,7 @@ SLA = "https://sisloc.zendesk.com/explore/studio#/dashboards/CEEA2DCEA89639D7264
 SOLICITACOES = "https://sisloc.zendesk.com/explore/studio#/dashboards/0750661411479DDCD82D3BDFC39D091ED2940BEC794DE502DE6F25787DB050AB"
 GERAL = "http://sisloctestefab:8080/"
 MONITOR_ACESSO = "http://aqs:8090/"
+GERADOR_VERSAO = "http://172.19.1.84:8090/"
 HORA_INICIO = "07:45" 
 HORA_PARADA = "18:15" 
 TEMPO_ALTERNANCIA = 60
@@ -71,9 +72,15 @@ try:
     time.sleep(5) # Tempo para o primeiro carregamento
 
     # 7.2 ABRE A QUARTA ABA COM O DASHBOARD MONITOR DE ACESSO
-    print("Carregando Dashboard de Monitor de Acesso...")
-    driver.execute_script(f"window.open('{MONITOR_ACESSO}', '_blank');")
-    time.sleep(5)       
+    # print("Carregando Dashboard de Monitor de Acesso...")
+    # driver.execute_script(f"window.open('{MONITOR_ACESSO}', '_blank');")
+    # time.sleep(5)  
+
+    # 7.3 ABRE A QUINTA ABA COM O DASHBOARD GERADOR DE VERSÃO
+    print("Carregando Dashboard de Gerador de Versão...")
+    driver.execute_script(f"window.open('{GERADOR_VERSAO}', '_blank');")
+    time.sleep(5)      
+
 
     abas = driver.window_handles
     logging.info(f"Abas identificadas com sucesso: {len(abas)} abas.")
